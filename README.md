@@ -24,7 +24,7 @@ https://api.tvmaze.com/shows
 ## Tecnologias
 
 - HTML  
-- Tailwind CSS (CDN)  
+- Tailwind CSS  
 - JavaScript  
 - Fetch API  
 
