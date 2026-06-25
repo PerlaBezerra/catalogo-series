@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Séries</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900 min-h-screen">
+
+    <header class="bg-transparent text-white text-center p-8">
+        <h1 class="text-4xl font-bold">
+            Catálogo de Séries
+        </h1>
+
+        <p class="mt-2">
+            Explore séries de forma interativa
+        </p>
+    </header>
+
+    <main class="container mx-auto p-6">
+
+        <div class="flex flex-col md:flex-row gap-4 mb-6">
+
+            <input
+                type="text"
+                id="busca"
+                placeholder="Pesquisar série..."
+                class="flex-1 p-3 border rounded-lg bg-white">
+
+            <select
+                id="filtroGenero"
+                class="p-3 border rounded-lg bg-white">
+
+                <option value="Todos">Todos os gêneros</option>
+                <option value="Drama">Drama</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Action">Action</option>
+                <option value="Crime">Crime</option>
+
+            </select>
+
+        </div>
+
+        <div
+            id="loading"
+            class="text-center text-xl font-semibold">
+            Carregando catálogo...
+        </div>
+
+        <div
+            id="catalogo"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        </div>
+
+    </main>
+
+    <div
+        id="modal"
+        class="hidden fixed inset-0 bg-black/70 flex items-center justify-center p-4">
+
+        <div class="bg-white max-w-2xl w-full rounded-xl p-6">
+
+            <div class="flex justify-between items-center mb-4">
+
+                <h2 id="modalTitulo" class="text-2xl font-bold"></h2>
+
+                <button
+                    id="fecharModal"
+                    class="text-red-600 text-2xl">
+                    ✖
+                </button>
+
+            </div>
+
+            <div id="modalConteudo"></div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
