@@ -35,8 +35,7 @@ https://api.tvmaze.com/shows
 - Uso da API TVMaze por ser gratuita e fácil de usar  
 - Uso de fetch para requisições assíncronas  
 - Renderização dinâmica dos cards no JavaScript  
-- Uso de modal para mostrar detalhes sem mudar de página  
-- Limite de 50 séries para melhorar desempenho  
+- Uso de modal para mostrar detalhes sem mudar de página   
 
 ---
 
