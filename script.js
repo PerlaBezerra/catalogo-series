@@ -14,7 +14,8 @@ fetch("https://api.tvmaze.com/shows")
     .then(response => response.json())
     .then(data => {
 
-        series = data.slice(0, 50);
+        
+        series = data.slice(0, 100);
 
         loading.classList.add("hidden");
 
@@ -42,6 +43,11 @@ function exibirSeries(lista) {
 
     lista.forEach(serie => {
 
+        const generoExibido =
+            filtroGenero.value === "Todos"
+                ? (serie.genres[0] || "Não informado")
+                : filtroGenero.value;
+
         catalogo.innerHTML += `
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:scale-105 hover:shadow-2xl transition duration-300">
 
@@ -61,7 +67,7 @@ function exibirSeries(lista) {
                     </p>
 
                     <p class="text-gray-600">
-                        🎭 ${serie.genres[0] || "Não informado"}
+                        🎭 ${generoExibido}
                     </p>
 
                     <button
@@ -98,6 +104,8 @@ function abrirModal(id) {
         <p><strong>Estreia:</strong> ${serie.premiered}</p>
 
         <p><strong>Nota:</strong> ${serie.rating.average || "Sem avaliação"}</p>
+
+        <p><strong>Gêneros:</strong> ${serie.genres.join(", ")}</p>
 
         <div class="mt-4">
             ${serie.summary || "Resumo indisponível"}
