@@ -10,11 +10,11 @@ const fecharModal = document.getElementById("fecharModal");
 
 let series = [];
 
+// CARREGAMENTO DA API
 fetch("https://api.tvmaze.com/shows")
     .then(response => response.json())
     .then(data => {
 
-        
         series = data.slice(0, 100);
 
         loading.classList.add("hidden");
@@ -26,6 +26,7 @@ fetch("https://api.tvmaze.com/shows")
         console.error(error);
 
         loading.innerHTML = "Erro ao carregar catálogo.";
+        loading.classList.add("hidden");
     });
 
 function exibirSeries(lista) {
